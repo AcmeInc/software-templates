@@ -39,6 +39,7 @@ spec:
           repo_name: ${{ (parameters.repoUrl | parseRepoUrl)["repo"] }}
           repo_owner: ${{ (parameters.repoUrl | parseRepoUrl)["owner"] }}
           agent_name: ${{ parameters.agent_name }}
+          tenant: ${{ roadie.tenantName }}
 
     - id: publish
       name: Publish
