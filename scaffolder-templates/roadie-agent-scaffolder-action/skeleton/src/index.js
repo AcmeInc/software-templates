@@ -2,12 +2,12 @@ import { RoadieAgent, createRoadieAgentScaffolderAction } from '@roadiehq/roadie
 import { myScaffolderActionHandler } from './myScaffolderActionHandler.js';
 
 RoadieAgent.fromConfig({
-    server: 'https://${{ values.tenant }}.broker.roadie.so',
+    server: 'https://${{ roadie.tenantName }}.broker.roadie.so',
     accept: `${process.cwd()}/config/accept.json`,
     identifier: process.env.BROKER_TOKEN
   })
   .addScaffolderAction(createRoadieAgentScaffolderAction({
-    name: '${{ values.roadie.tenantName }}',
+    name: '${{ roadie.tenantName }}',
     handler: myScaffolderActionHandler
   }))
   .start();
